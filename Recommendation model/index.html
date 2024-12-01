@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation</title>
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+    <form action="/recommend" method="post">
+        <!-- Customer ID Dropdown -->
+        <label for="last_name">last_name:</label>
+        <select id="last_name" name="last_name" required>
+            {% for value in dropdown_data['last_name'] %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- Amount Dropdown -->
+        <label for="amount">Amount:</label>
+        <select id="amount" name="amount" required>
+            {% for value in dropdown_data['amount'] %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- City Dropdown -->
+        <label for="city">City:</label>
+        <select id="city" name="city" required>
+            {% for value in dropdown_data['city'] %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- Rental Period Dropdown -->
+        <label for="rental_period">Rental Period:</label>
+        <select id="rental_period" name="rental_period" required>
+            {% for value in dropdown_data['rental_period'] %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- Category Dropdown -->
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            {% for value in dropdown_data['category'] %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Get Recommendation</button>
+    </form>
+</body>
+</html>
